@@ -41,6 +41,7 @@ def read_lcr_report(filepath, **kwargs):
 
 if __name__ == '__main__':
     # read_lcr_report('recent_converts_24_months/20210706.json')
-    # read_lcr_report('all_baptisms_24_months/20210706.json')
-    read_lcr_report('recent_stake_callings/20210714.json', list='one')
+    read_lcr_report('all_baptisms_24_months/20210825.json')
+    # read_lcr_report('recent_stake_callings/20210714.json', list='one')
+    # read_lcr_report('stake_young_women/20210812.json')
 
