@@ -14,8 +14,13 @@ def sustained_parse(callings, **kwargs):
     callings = callings_parse(callings, list='one')
     return callings.split('(')[-1].replace(')', '')
 
+def set_apart_parse(callings, **kwargs):
+    dateAndSetApart = sustained_parse(callings)
+    return dateAndSetApart.split('/')[1]
+
 COLUMN_FUNCTIONS = {'CALLINGS': callings_parse,
-                    'CALLINGS_WITH_DATE_SUSTAINED': sustained_parse}
+                    'CALLINGS_WITH_DATE_SUSTAINED': sustained_parse,
+                    'CALLINGS_WITH_DATE_SUSTAINED_AND_SET_APART': set_apart_parse}
 
 def read_lcr_report(filepath, **kwargs):
 
@@ -42,5 +47,6 @@ def read_lcr_report(filepath, **kwargs):
 if __name__ == '__main__':
     # read_lcr_report('recent_converts_24_months/20210706.json')
     # read_lcr_report('all_baptisms_24_months/20210706.json')
-    read_lcr_report('recent_stake_callings/20210714.json', list='one')
-
+    # read_lcr_report('recent_stake_callings/20210714.json', list='one')
+    # read_lcr_report('elders_quorum_presidencies/20210808.json', list='one')
+    read_lcr_report('all_baptisms_24_months/20210808.json')
